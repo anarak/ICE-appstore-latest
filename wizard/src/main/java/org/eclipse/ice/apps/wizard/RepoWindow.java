@@ -18,34 +18,51 @@ import com.vaadin.ui.Window;
  * @author 
  *
  */
-public class repoWindow extends Window {
-	public repoWindow() {
-		super("Remote Package Specification");
+public class RepoWindow extends Window {
+	public RepoWindow() {
+		super("Package Repository Specification");
 	
 		final VerticalLayout vLayout = new VerticalLayout();
 		final HorizontalLayout hLayout = new HorizontalLayout();
-		
+		final VerticalLayout repoListVLayout = new VerticalLayout();
+		final HorizontalLayout btnsHLayout = new HorizontalLayout();
+		final Button btnAddRepo = new Button(FontAwesome.PLUS);
+		final Button btnOkRepo = new Button("OK", event -> close());
+		final Button btnCancelRepo = new Button("Cancel", event -> close());		
 		final TextField txtFieldRepoURL = new TextField();
+		
 		txtFieldRepoURL.setCaption("Package repository (GitHub):");
 		txtFieldRepoURL.setInputPrompt("Enter URL to the repository");
-	
-	    Button btnAddRepo = new Button(FontAwesome.PLUS);
+		txtFieldRepoURL.setWidth("500px");
+	    btnOkRepo.setWidth("130");
+	    btnCancelRepo.setWidth("130");
 	    
 	    btnAddRepo.addClickListener( e -> {
 	    	if (!txtFieldRepoURL.getValue().isEmpty()) {
-	    		vLayout.addComponent(new Label(txtFieldRepoURL.getValue() 
+	    		repoListVLayout.addComponent(new Label(txtFieldRepoURL.getValue() 
 	    				+ " - is added!"));
 	    		txtFieldRepoURL.clear();
 	    	}
 	    });
 	    
+//	    btnOkRepo.addClickListener( e -> {
+//	    	
+//	    });
 	    hLayout.addComponents(txtFieldRepoURL, btnAddRepo);
 	    hLayout.setComponentAlignment(btnAddRepo, Alignment.BOTTOM_RIGHT);
 	    hLayout.setMargin(true);
 	    hLayout.setSpacing(true);
 	    vLayout.setMargin(true);
 	    vLayout.setSpacing(true);
+	    repoListVLayout.setMargin(true);
+	    repoListVLayout.setSpacing(true);
+	    btnsHLayout.setMargin(true);
+	    btnsHLayout.setSpacing(true);
 	    vLayout.addComponent(hLayout);
+	    vLayout.addComponent(repoListVLayout);
+	    btnsHLayout.addComponents(btnCancelRepo, btnOkRepo);
+	    vLayout.addComponent(btnsHLayout);
+	    vLayout.setComponentAlignment(btnsHLayout, Alignment.BOTTOM_RIGHT);
 	    center();
 	    setContent(vLayout);
 	}

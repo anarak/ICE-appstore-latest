@@ -2,6 +2,8 @@ package org.eclipse.ice.apps.wizard;
 
 import com.vaadin.navigator.View;
 
+import java.io.OutputStream;
+
 import org.eclipse.ice.apps.wizard.MyUI.MyUIServlet;
 
 import com.vaadin.navigator.Navigator;
@@ -11,6 +13,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
+import com.vaadin.ui.Upload;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.declarative.Design;
@@ -20,6 +23,7 @@ public class GeneralView extends SpackApps implements View {
 	final EnvironmentDesign env = new EnvironmentDesign();	
 	final FolderEnvironment folderEnv = new FolderEnvironment();
 	final DockerEnvironment dockerEnv = new DockerEnvironment();
+	final Button btnAddFedoraPkg = new Button("Add Fedora packages...");
 	private int chkBoxCounter = 0;
 	
 	public GeneralView() {
@@ -41,11 +45,18 @@ public class GeneralView extends SpackApps implements View {
 				}
 			});
 		}
+		
 		btnAddFromRepo.addClickListener( e -> {        	
 	    	getUI();
-			UI.getCurrent().addWindow(new repoWindow());
+			UI.getCurrent().addWindow(new RepoWindow());
 	    });
-				
+		btnAddFedoraPkg.addClickListener( e -> {
+			getUI();
+			UI.getCurrent().addWindow(new FedoraPkgsWindow());
+		});
+		
+		vlayoutEnvironment.addComponent(btnAddFedoraPkg);
+		
 		this.btnAdvanced.setIcon(FontAwesome.CARET_RIGHT);
 		this.btnAdvanced.addClickListener( e -> {
 			if (btnAdvanced.getIcon().equals(FontAwesome.CARET_RIGHT)) {
@@ -60,6 +71,7 @@ public class GeneralView extends SpackApps implements View {
 		env.optionGroupInstallType.select("Docker container");
 		env.envVerticalLayout.addComponent(dockerEnv);
 		env.optionGroupInstallType.setItemCaption("Docker container", "Docker");
+		folderEnv.btnBrowseFolderEnv.setCaption("OK");
 	}
 	
 	@Override
