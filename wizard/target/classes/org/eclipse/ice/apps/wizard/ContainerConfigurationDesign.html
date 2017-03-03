@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="7.7.0">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing responsive height="363px" margin-left margin-right margin-top>
+   <vaadin-css-layout responsive width-full>
+    <vaadin-label responsive size-full plain-text>
+      Select Docker Image: 
+    </vaadin-label>
+   </vaadin-css-layout>
+   <vaadin-horizontal-layout spacing responsive size-full margin-left margin-right margin-bottom :expand>
+    <vaadin-list-select caption="Docker Images:" responsive size-full _id="lstDockerImages" :expand>
+     <option>Image 1</option>
+     <option>Image 2</option>
+     <option>Image 3</option>
+    </vaadin-list-select>
+    <vaadin-grid caption="Image Description:" responsive size-full :expand="1.5">
+     <table>
+      <colgroup>
+       <col property-id="Property" sortable>
+       <col property-id="Value" sortable>
+      </colgroup>
+      <thead>
+       <tr default>
+        <th plain-text>Property</th>
+        <th plain-text>Value</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td>Property 1</td>
+        <td>OK</td>
+       </tr>
+       <tr>
+        <td>Property 2</td>
+        <td>OK</td>
+       </tr>
+       <tr>
+        <td>Property 3</td>
+        <td>OK</td>
+       </tr>
+       <tr>
+        <td>Property 4</td>
+        <td>OK</td>
+       </tr>
+       <tr>
+        <td>Property 5</td>
+        <td>OK</td>
+       </tr>
+       <tr>
+        <td>Property 6</td>
+        <td>OK</td>
+       </tr>
+       <tr>
+        <td>Property 7</td>
+        <td>OK</td>
+       </tr>
+       <tr>
+        <td>Property 8</td>
+        <td>OK</td>
+       </tr>
+       <tr>
+        <td>Property 9</td>
+        <td>OK</td>
+       </tr>
+      </tbody>
+     </table>
+    </vaadin-grid>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

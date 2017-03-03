@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="7.7.0">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing margin-left margin-right margin-top>
+   <vaadin-css-layout responsive size-full>
+    <vaadin-label style-name="title" responsive size-full plain-text>
+      Environment setup 
+    </vaadin-label>
+   </vaadin-css-layout>
+   <vaadin-css-layout caption="Install Type:" style-name="form-section caption-left" responsive width="97%" height-full _id="cssLayoutInstallType" :right>
+    <vaadin-option-group responsive _id="optionGroupInstallType">
+     <option>Docker container</option>
+     <option>Folder</option>
+    </vaadin-option-group>
+   </vaadin-css-layout>
+   <vaadin-css-layout style-name="form-section" size-full _id="cssInstallationOptions" :right>
+    <vaadin-label style-name="title" size-full plain-text>
+      Installation Options: 
+    </vaadin-label>
+   </vaadin-css-layout>
+   <vaadin-vertical-layout _id="envVerticalLayout"></vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:true,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;,&quot;GRID_TYPE&quot;:&quot;RegularGrid,20&quot;}">
+  <meta name="vaadin-version" content="7.7.0">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing responsive width="839px" margin>
+   <vaadin-label responsive plain-text _id="lblHeader">
+     Welcome to Apps Wizard. Please select apps below for installing: 
+   </vaadin-label>
+   <vaadin-text-field description="Enter package name to find it in the list" caption="Search packages:" input-prompt="Type in package name" responsive width-full _id="txtFieldPackageSearch"></vaadin-text-field>
+   <vaadin-panel responsive height="400px" _id="pnlPackageList" :expand>
+    <vaadin-vertical-layout responsive _id="packageList"></vaadin-vertical-layout>
+   </vaadin-panel>
+   <vaadin-button responsive plain-text _id="btnAddFromRepo">
+     Add from repo... 
+   </vaadin-button>
+   <vaadin-horizontal-layout>
+    <vaadin-button icon="fonticon://FontAwesome/f0da" primary-style-name="v-button-adv" style-name="borderless" responsive width="23px" height="24px" spacing="true" plain-text _id="btnAdvanced"></vaadin-button>
+    <vaadin-label size-auto plain-text>
+      Advanced... 
+    </vaadin-label>
+   </vaadin-horizontal-layout>
+   <vaadin-vertical-layout _id="vlayoutEnvironment"></vaadin-vertical-layout>
+   <vaadin-horizontal-layout spacing responsive width-full margin-top>
+    <vaadin-label size-full plain-text _id="dummyLabel" :expand></vaadin-label>
+    <vaadin-button enabled="false" responsive width="130px" plain-text _id="btnInstall" :right>
+      Validate 
+    </vaadin-button>
+    <vaadin-button width="130px" plain-text>
+      Cancel 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>
